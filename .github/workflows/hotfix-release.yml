@@ -1,0 +1,30 @@
+name: Hotfix Release
+
+on:
+  pull_request:
+    types: [closed] # Trigger when a PR is closed
+    branches:
+      - main        # Only when the PR's base branch is main
+
+jobs:
+  trigger_release_cycle:
+    # This job runs only if the PR was merged (not just closed)
+    # AND the head branch (the branch that was merged) starts with 'hotfix/'
+    if: |
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.head.ref, 'hotfix/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # Or your preferred version
+
+      - name: Start Release Cycle for Hotfix
+        run: |
+          echo "Pull request ${{ github.event.pull_request.html_url }} was merged."
+          echo "Source branch was ${{ github.event.pull_request.head.ref }}."
+          echo "Starting release cycle..."
+          # Add your actual release cycle steps here
+          # For example:
+          # - run: ./scripts/prepare-release.sh
+          # - run: ./scripts/build-release.sh
+          # - run: ./scripts/deploy-release.sh
