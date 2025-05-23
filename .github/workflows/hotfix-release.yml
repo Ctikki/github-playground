@@ -13,18 +13,27 @@ jobs:
     if: |
       github.event.pull_request.merged == true &&
       startsWith(github.event.pull_request.head.ref, 'hotfix/')
+    permissions:
+      contents: write
+      pull-requests: write # Required by release-please for creating releases/tags
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4 # Or your preferred version
+        with:
+          fetch-depth: 0 # Release Please needs full commit history and tags
 
-      - name: Start Release Cycle for Hotfix
+      - name: Run Release Please for Hotfix
+        id: release_please
+        uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} # Or a PAT if you need to trigger other workflows
+          release-type: php
+          skip-github-pull-request: true # Creates the release directly, as the PR is already merged.
+
+      - name: Output release information
+        if: steps.release_please.outputs.release_created == 'true'
         run: |
-          echo "Pull request ${{ github.event.pull_request.html_url }} was merged."
-          echo "Source branch was ${{ github.event.pull_request.head.ref }}."
-          echo "Starting release cycle..."
-          # Add your actual release cycle steps here
-          # For example:
-          # - run: ./scripts/prepare-release.sh
-          # - run: ./scripts/build-release.sh
-          # - run: ./scripts/deploy-release.sh
+          echo "Release created: ${{ steps.release_please.outputs.tag_name }}"
+          echo "Version: ${{ steps.release_please.outputs.version }}"
+          echo "HTML URL: ${{ steps.release_please.outputs.html_url }}"
