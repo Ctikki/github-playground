@@ -1,6 +1,6 @@
 {
     "name": "ctikki/github-playground",
-    "version": "1.3.0",
+    "version": "1.3.1",
     "type": "project",
     "autoload": {
         "psr-4": {
