@@ -19,6 +19,7 @@ def say_goodbye():
 
 def show_time():
     """Displays the current time."""
+    # This is a simulated hotfix change
     now = datetime.datetime.now()
     print(f"Current time: {now.strftime('%Y-%m-%d %H:%M:%S')}")
 
