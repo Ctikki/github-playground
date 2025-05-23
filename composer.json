@@ -1,0 +1,25 @@
+{
+    "name": "ctikki/github-playground",
+    "version": "1.2.1",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Ctikki\\GithubPlayground\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "stikki",
+            "email": "tapio.loytty@crasman.fi"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "eliashaeussler/version-bumper": "dev-main"
+    },
+    "config": {
+        "allow-plugins": {
+            "eliashaeussler/version-bumper": true
+        }
+    }
+}
