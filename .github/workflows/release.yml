@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # Release Please needs full commit history and tags
+          # to correctly determine the next version.
+          fetch-depth: 0
+
+      - name: Run Release Please
+        id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # This workflow will create a Release PR by default.
+          # You can customize the release-type if needed, e.g., php, node, python, etc.
+          # For a PHP project, you might add:
+          # release-type: php
+          # If your project isn't PHP, or you want generic behavior,
+          # you can omit release-type or use 'simple'.
+          # For now, I'll leave it to default or you can specify.
+          # For a PHP project, let's assume 'php' like your hotfix workflow.
+          release-type: php
