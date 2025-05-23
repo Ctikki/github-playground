@@ -8,8 +8,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  # Allow release-please to create labels on the PR
-  metadata: write
+  issues: write
 
 jobs:
   release-please:

@@ -16,6 +16,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write # Required by release-please for creating releases/tags
+      issues: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
