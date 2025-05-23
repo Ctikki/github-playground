@@ -7,6 +7,30 @@
 ### Bug Fixes
 
 * Correct data aggregation in analytics module (simulated) ([a76ecdd](https://github.com/Ctikki/github-playground/commit/a76ecdd20e4214ce09d7d5328306feee1ad01109))
+## [1.3.0](https://github.com/Ctikki/github-playground/compare/v1.2.0...v1.3.0) (2025-05-23)
+
+
+### Features
+
+* Grant release-please permission to create labels on PRs ([5d260af](https://github.com/Ctikki/github-playground/commit/5d260af8f049d0cdbe3805408a59c404cc6036a0))
+* Implement hotfix release workflow using Release Please action ([5b9be5f](https://github.com/Ctikki/github-playground/commit/5b9be5fb2d6623e76ff394c638ce78e8b6586be3))
+* wicked baloons ([2512377](https://github.com/Ctikki/github-playground/commit/251237761ab0c653282b4b1cafaa88b888d1d6ab))
+
+
+### Bug Fixes
+
+* Apply simulated patch for critical display issue ([9e0a417](https://github.com/Ctikki/github-playground/commit/9e0a4173d35543250a7409e4a269e325d4d05a59))
+* Apply simulated patch for critical display issue ([211beb4](https://github.com/Ctikki/github-playground/commit/211beb4422ae6578a476d209a4b27bf948d0d7a6))
+* Optimize database query performance under high load ([03bb161](https://github.com/Ctikki/github-playground/commit/03bb161b128e02b0bedfc0488c13e6a8d7fce7b3))
+
+
+### Miscellaneous Chores
+
+* add composer.json ([ac2bfcf](https://github.com/Ctikki/github-playground/commit/ac2bfcfadd9491cb6592d55dcafbddd085e21455))
+* misc ([45c6dab](https://github.com/Ctikki/github-playground/commit/45c6dab57746083c1445880a211814c61ea414c2))
+* Refactor internal utility functions for clarity ([36d2585](https://github.com/Ctikki/github-playground/commit/36d2585a5343d1421424eaa8de110641c8bed901))
+* testing CI ([5dec57e](https://github.com/Ctikki/github-playground/commit/5dec57ec29f1913ac9e2eb83c321eb4c150c928a))
+
 ## [1.1.2](https://github.com/Ctikki/github-playground/compare/v1.1.1...v1.1.2) (2025-05-22)
 
 ### Bug Fixes
